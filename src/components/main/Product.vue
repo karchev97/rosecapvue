@@ -2,19 +2,19 @@
   <article class="product-cart">
       <div class="product-slider">
         <div class="product-slider__main-img">
-          <img src="img/Product3.png" alt="Пальто">
+          <img src="/img/Product3.png" alt="Пальто">
         </div>
         <ul class="product-slider__another-imgs">
-          <li><img src="img/Product1.png" alt="Пальто"></li>
-          <li><img src="img/Product2.png" alt="Пальто"></li>
-          <li><img src="img/Product3.png" alt="Пальто"></li>
-          <li><img src="img/Product3.png" alt="Пальто"></li>
+          <li><img src="/img/Product1.png" alt="Пальто"></li>
+          <li><img src="/img/Product2.png" alt="Пальто"></li>
+          <li><img src="/img/Product3.png" alt="Пальто"></li>
+          <li><img src="/img/Product3.png" alt="Пальто"></li>
         </ul>
       </div>
       <div class="product-info">
-        <h1 class="product-info__title">Full product name</h1>
-        <h3 class="product-info__sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, saepe.</h3>
-        <p class="product-info__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, optio commodi recusandae obcaecati nulla fugiat quis, maiores quia fugit animi molestias, unde consequatur deserunt quisquam minima eligendi expedita reiciendis sed tenetur doloremque assumenda. Quas nihil omnis tenetur recusandae, minus culpa?</p>
+        <h1 class="product-info__title">{{ product.title }}</h1>
+        <h3 class="product-info__sub-title">{{ product.sub_title }}</h3>
+        <p class="product-info__description">{{ product.description }}</p>
         <div class="product-params">
           <div class="product-params__size">
             <span class="product-params__text">Выберите размер:</span>
@@ -42,6 +42,20 @@
 
 <script>
 export default {
-  
+  data(){
+    return{
+      id: this.$route.params.id,
+      product: {},
+    }
+  },
+  beforeMount(){
+    for(var i = 0; i < this.$store.getters.PRODUCTS.length; i++){
+      if(this.$store.getters.PRODUCTS[i].id == this.id){
+        this.product = this.$store.getters.PRODUCTS[i];
+        continue;
+      }
+    }
+    window.scrollTo(0, 0);
+  }
 }
 </script>

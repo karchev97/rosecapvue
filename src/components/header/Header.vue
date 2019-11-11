@@ -19,7 +19,7 @@
       <nav class="main-nav">
         <div class="nav-items">
           <span class="ti-view-list menu-icon" @click="isOpen = !isOpen"></span>
-          <a class="nav-items__logo" href="#"><img src="img/logo.png" alt="Логотип"></a>
+          <router-link to="/" class="nav-items__logo"><img src="/img/logo.png" alt="Логотип"></router-link>
           <transition name="slide-fade">
           <ul class="nav-items__ul-items" v-show="isOpen">
             <li class="nav-items__ul-item"><router-link to="/">Главная</router-link></li>

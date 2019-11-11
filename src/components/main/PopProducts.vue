@@ -13,7 +13,7 @@
           <article class="pop-products-item" v-for="(product, key) in products" >
             <router-link :to="'product/'+product.id" class="pop-products-item__link">
               <div class="pop-products-item__img">
-                  <img :src="'img/'+product.imgs[0]" alt="Пальто">
+                  <img :src="'/img/'+product.imgs[0]" alt="Пальто">
                 </div>
               <h3 class="pop-products-item__title">{{ product.title }}</h3>
               <h4 class="pop-products-item__price">{{ product.price }} руб.</h4>
