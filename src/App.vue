@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="custom-classes-transition"
-    enter-active-class="animated slideInLeft">
+    enter-active-class="animated fadeIn">
     <router-view/>
     </transition>
   </div>
