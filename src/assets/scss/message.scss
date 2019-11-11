@@ -1,0 +1,76 @@
+.contact-place{
+    @include w960();
+
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+
+    &__title{
+        @include defaultFont(800, normal, $mainColor);
+
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    &__form{
+        flex-basis: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__input{
+        @include defaultFont(400, italic, $mainDarkColor);
+
+        padding: 0 15px;
+        font-size: 14px;
+        flex-basis: 70%;
+        height: 35px;
+        border-radius: 0;
+        border: 1px solid #edeff1;
+        margin-right: 10px;
+        outline: none;
+
+        &:active{
+            outline: none;
+        }
+    }
+
+    &__submit{
+        background: $mainColor;
+        color: #fff;
+        border: 0;
+        outline: none;
+        padding: 0 12px;
+        transition: all 0.5s;
+
+        &:hover{
+            cursor: pointer;
+            background: $mainDarkColor;
+        }
+    }
+
+}
+
+@media (min-width: 800px) and (max-width: 1200px){
+    .contact-place{
+        @include w90();
+    }
+}
+
+@media (min-width: 320px) and (max-width: 800px){
+    .contact-place{
+        @include w90();
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        &__title{
+            flex-basis: 100%;
+        }
+
+        &__form{
+            flex-basis: 100%;
+            justify-content: flex-start;
+            margin-top: 30px;
+        }
+    }
+}

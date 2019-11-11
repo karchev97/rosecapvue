@@ -1,0 +1,34 @@
+
+@mixin defaultLink($color: $mainColor, $fSize: 14px, $hover: blue, $active: green) {
+    color: $color;
+    font-size: $fSize;
+    text-decoration: none;
+
+    &:hover{
+        color: $hover;
+    }
+
+    &:active{
+        color: $active;
+    }
+    
+}
+
+@mixin defaultFont($weight: 400, $style: normal, $color: mainDarkColor) {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: $color;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin w960 {
+	width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@mixin w90 {
+	width: 90%;
+    margin: 0 5%;
+    box-sizing: border-box
+}

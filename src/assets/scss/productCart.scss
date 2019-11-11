@@ -1,0 +1,244 @@
+.product-cart{
+    @include w960();
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.product-slider{
+    flex-basis: 40%;
+    text-align: center;
+    padding-right: 40px;
+
+    &__main-img{
+        padding: 40px 0;
+        height: 220px;
+
+        & img{
+            height: 100%;
+        }
+    }
+
+    &__another-imgs{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        padding: 0;
+        flex-wrap: wrap;
+
+        & > li{
+            display: inline-block;
+            flex-basis: 11%;
+            margin: 0 1%;
+            margin-bottom: 7px;
+            padding: 20px;
+            border: 1px solid#edeff1;
+            transition: all 0.5s;
+
+            & > img{
+                max-width: 100%;
+            }
+
+            &:hover{
+                cursor: pointer;
+                border: 1px solid $mainColor;
+            }
+        }
+    }
+}
+
+.product-info{
+    flex-basis: 60%;
+
+    &__title{
+        @include defaultFont(800, normal, $mainColor);
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    &__sub-title{
+        @include defaultFont(500, normal, $mainDarkColor);
+        font-size: 17px;
+    }
+
+    &__description{
+        padding-top: 10px;
+        @include defaultFont(300, normal, $mainDarkColor);
+        font-size: 14px;
+    }
+}
+
+.product-params{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #edeff1;
+    border-bottom: 1px solid #edeff1;
+    padding: 20px 0;
+
+    &__size{
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+
+        & > span{
+            @include defaultFont(500, normal, $mainDarkColor);
+            font-size: 13px;
+        }
+    }
+
+    &__size-items{
+        display: flex;
+        flex-direction: row;
+        max-height: 19px;
+    }
+
+    &__size-item{
+        @include defaultFont(400, normal, $mainDarkColor);
+        font-size: 12px;
+        display: inline-block;
+
+        & span{
+            font-size: 14px;
+            padding: 0 3px;
+            transition: all 0.2s;
+
+            &:hover{
+                font-size: 16px;
+                color: $mainColor;
+                cursor: pointer;
+            }
+
+            &.active{
+                font-size: 16px;
+                color: $mainColor;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__count{
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        & > span:nth-child(1){
+            @include defaultFont(500, normal, $mainDarkColor);
+            font-size: 13px;
+        }
+    }
+
+    &__count-minus,
+    &__count-plus{
+        @include defaultFont(400, normal, #495662);
+        font-size: 16px;
+        padding: 0 10px;
+
+        &:hover{
+            cursor: pointer;
+            color: $mainColor;
+        }
+    }
+
+    &__count-num{
+        @include defaultFont(400, normal, $mainColor);
+        font-size: 18px;
+    }
+}
+
+.product-action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 20px;
+
+    &__price{
+        @include defaultFont(600, normal, black);
+        font-size: 18px;
+    }
+
+    &__go-order{
+        background: $mainColor;
+        color: #fff;
+        border: 0;
+        outline: none;
+        padding: 12px 20px;
+        transition: all 0.5s;
+
+        &:hover{
+            cursor: pointer;
+            background: $mainDarkColor;
+        }
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1200px){
+    .product-cart{
+      @include w90();
+    }
+}
+
+@media (min-width: 550px) and (max-width: 800px){
+    .product-cart{
+        @include w90();
+    }
+
+    .product-params{
+        flex-wrap: wrap;
+
+        &__size{
+            flex-basis: 100%;
+        }
+
+        &__count{
+            flex-basis: 100%;
+            justify-content: flex-start;
+        }
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 550px){
+    .product-cart{
+        @include w90();
+        flex-wrap: wrap;
+    }
+
+    .product-slider,
+    .product-info{
+        flex-basis: 100%;
+    }
+
+    .product-slider{
+        padding: 10px;
+    }
+
+    .product-info{
+        &__title{
+            margin-top: 0;
+        }
+        &__title,
+        &__sub-title,
+        &__description{
+            padding: 0 10px;
+        }
+    }
+    .product-params{
+        flex-wrap: wrap;
+
+        &__size{
+            flex-basis: 100%;
+        }
+
+        &__count{
+            flex-basis: 100%;
+            justify-content: flex-start;
+        }
+    }
+    
+}
