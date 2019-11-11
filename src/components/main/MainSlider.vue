@@ -8,20 +8,17 @@
           </ul>
         </nav>
         <section class="main-slider-content">
-          <transition enter-active-class="animated fadeIn">
+          <transition enter-active-class="animated bounceInLeft">
             <h1 class="main-slider-content__title" :key="slides[siSHowid].title">{{ slides[siSHowid].title }}</h1>
           </transition>
-          <transition enter-active-class="animated fadeInDown">
-          <strong class="main-slider-content__strong-text" :key="slides[siSHowid].sub_title">{{ slides[siSHowid].sub_title }}</strong>
-          </transition>
-          <div class="main-slider-content__default-text" :key="slides[siSHowid].description">{{ slides[siSHowid].description }}</div>
-          <ul class="main-slider-content__price-items" :key="slides[siSHowid].price">
+          <strong class="main-slider-content__strong-text">{{ slides[siSHowid].sub_title }}</strong>
+          <div class="main-slider-content__default-text">{{ slides[siSHowid].description }}</div>
+          <ul class="main-slider-content__price-items">
             <li>Цена: {{ slides[siSHowid].price }} руб</li>
             <li><a :href="slides[siSHowid].link_to"><span class="ti-shopping-cart-full"></span> Добавить в корзину</a></li>
           </ul>
         </section>
       </div>
-      
     </article>
 </template>
 
@@ -31,29 +28,7 @@ export default {
     return{
       siSHowid: 0,
       timer: '',
-      slides: [
-        {
-          title: "Full winter kit",
-          sub_title: "Какой-то дополнительный текст",
-          description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-          price: "10.000",
-          link_to: "#"
-        },
-        {
-          title: "Another title for example",
-          sub_title: "Какой-то дополнительный текст 2",
-          description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit 2",
-          price: "130.000",
-          link_to: "#"
-        },
-        {
-          title: "Revolution product",
-          sub_title: "Подзаголовок продаваемого товара",
-          description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit 2",
-          price: "99.000",
-          link_to: "#"
-        }
-      ]
+      slides: this.$store.getters.MAIN_SLIDER
     }
   },
   methods: {
@@ -65,7 +40,7 @@ export default {
     autoSlde: function(){
       this.timer = setInterval(function(){
         ((this.slides.length - 1) == this.siSHowid) ? this.siSHowid = 0 : this.siSHowid++;
-      }.bind(this), 7000)
+      }.bind(this), 7000);
     }
   },
   computed: {

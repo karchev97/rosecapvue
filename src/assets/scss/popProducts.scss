@@ -25,12 +25,16 @@
 
 .pop-products{
   @include w960();
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: row;
+  transition: all 0.7s;
+  padding-right: 15px;
 }
 
 .pop-products-item{
+  flex:none;
   flex-basis: 23%;
   margin:0 1%;
   text-align: center;
@@ -38,6 +42,15 @@
   background-color: #fff;
   height: 275px;
   overflow: hidden;
+  transition: all 0.7s;
+  box-sizing: border-box;
+
+  &:first-child{
+    margin-left: 0;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
 
   &__link{
     text-decoration: none;
@@ -106,25 +119,30 @@
 
   display: flex;
   margin: 20px auto;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px 0;
 
   &__item{
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: $mainDarkColor;
-    display: inline-block;
-    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(153, 151, 151);
+    background: #fff;
+
+    display: flex;
+    margin: 0 10px;
+
+    & > span{
+      margin: auto;
+    }
 
     &:hover{
       cursor: pointer;
+
+      & > span{
+        color: $mainColor;
+      }
     }
 
-    &:last-child, 
-    &:first-child{
-      margin: 0;
-    }
     &.active{
       background: $mainColor;
     }
@@ -140,10 +158,9 @@
   }
   .pop-products{
     @include w90();
-    flex-wrap: wrap;
   }
   .pop-products-item{
-    flex-basis: 48%;
+    flex-basis: 98%;
     margin:0 1%;
     margin-bottom: 20px;
   }
@@ -155,11 +172,9 @@
   }
   .pop-products{
     @include w90();
-
-    flex-wrap: wrap;
   }
   .pop-products-item{
-    flex-basis: 31%;
+    flex-basis: 48%;
     margin:0 1%;
     margin-bottom: 20px;
   }
