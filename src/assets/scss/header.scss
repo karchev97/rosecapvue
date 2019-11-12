@@ -1,12 +1,11 @@
 .full-width-block{
 	width: 100%;
-	box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid $colorGrey;
 
 	@include defaultFont(400, normal);
 }
-.full-width-block--contact{
-	border-bottom: 1px solid $colorGrey;
-}
+
 
 @mixin liDisplay {
 	li{

@@ -30,9 +30,9 @@
 
         <ul class="shop-nav">
           <li class="shop-nav__item"><a href="#"><span class="ti-search"></span></a></li>
-          <li class="shop-nav__item"><a href="#"><span class="ti-shopping-cart"></span>
+          <li class="shop-nav__item"><router-link to="/cart"><span class="ti-shopping-cart"></span>
             <div class="shop-nav__count">{{ countCart.length }}</div>
-          </a></li>
+          </router-link></li>
         </ul>
       </nav>
     </div>

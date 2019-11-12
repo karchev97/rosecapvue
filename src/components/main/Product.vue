@@ -22,7 +22,7 @@
             <span class="product-params__text">Выберите размер:</span>
             <ul class="product-params__size-items">
               <li class="product-params__size-item" v-for="(size, key) in product.size">
-                <span :class="{active: activeSize == key}" @click="chooseSize(key)">{{ size }}</span> - 
+                <span :class="{active: activeSize == key}" @click="chooseSize(key)">{{ size }}</span>
               </li>
             </ul>
           </div>
@@ -104,6 +104,7 @@ export default {
 
     productInit: function(){
       this.id = this.$route.params.id
+      this.count = 1
       for(var i = 0; i < this.$store.getters.PRODUCTS.length; i++){
         if(this.$store.getters.PRODUCTS[i].id == this.id){
           this.product = this.$store.getters.PRODUCTS[i];
