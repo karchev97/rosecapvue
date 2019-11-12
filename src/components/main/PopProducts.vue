@@ -21,10 +21,10 @@
             <div class="pop-products-item-choose">
               <div class="pop-products-item-choose__size">размеры : <span v-for="size in product.size">{{ size }} ,</span></div>
 
-              <ul class="pop-products-item-choose__action-items">
+              <!-- <ul class="pop-products-item-choose__action-items">
                 <li class="pop-products-item-choose__action-item"><span class="ti-shopping-cart"></span></li>
                 <li class="pop-products-item-choose__action-item"><span class="ti-heart"></span></li>
-              </ul>
+              </ul> -->
             </div>
             </router-link>
           </article>

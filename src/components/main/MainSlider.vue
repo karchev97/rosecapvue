@@ -15,7 +15,6 @@
           <div class="main-slider-content__default-text">{{ slides[siSHowid].description }}</div>
           <ul class="main-slider-content__price-items">
             <li>Цена: {{ slides[siSHowid].price }} руб</li>
-            <li><a :href="slides[siSHowid].link_to"><span class="ti-shopping-cart-full"></span> Добавить в корзину</a></li>
           </ul>
         </section>
       </div>

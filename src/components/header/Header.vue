@@ -23,13 +23,12 @@
           <transition name="slide-fade">
           <ul class="nav-items__ul-items" v-show="isOpen">
             <li class="nav-items__ul-item"><router-link to="/">Главная</router-link></li>
-            <li class="nav-items__ul-item"><router-link to="/product">Продукция</router-link></li>
+            <li class="nav-items__ul-item"><router-link to="/product/0">Продукция</router-link></li>
           </ul>
           </transition>
         </div>
 
         <ul class="shop-nav">
-          <li class="shop-nav__item"><a href="#"><span class="ti-search"></span></a></li>
           <li class="shop-nav__item"><router-link to="/cart"><span class="ti-shopping-cart"></span>
             <div class="shop-nav__count">{{ countCart.length }}</div>
           </router-link></li>

@@ -4,12 +4,12 @@ export default {
   },
   mutations: {
     addToCart(state, obj){
-      //console.log(this.getters.CART_COUNT)
+      //console.log(state.products)
       state.products.push(obj)
     },
     changeCountCart(state, obj){
       for(var i = 0; i < state.products.length; i++){
-        if(state.products[i].id == obj.id){
+        if((state.products[i].id == obj.id) && (state.products[i].size == obj.size)){
           if(obj.action == 'plus') state.products[i].count++
           else if(obj.action == 'minus') {
             if(state.products[i].count == 1) continue

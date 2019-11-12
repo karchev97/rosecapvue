@@ -10,9 +10,9 @@
           <td>
             <div class="product-params__count">
               <span class="count-num">Количество:</span>
-              <span class="product-params__count-minus" @click="changeCount('minus', prod.id)"> - </span>
+              <span class="product-params__count-minus" @click="changeCount('minus', prod.id, prod.size)"> - </span>
               <span class="product-params__count-num">{{ prod.count }}</span>
-              <span class="product-params__count-plus" @click="changeCount('plus', prod.id)"> + </span>
+              <span class="product-params__count-plus" @click="changeCount('plus', prod.id, prod.size)"> + </span>
             </div>
           </td>
           <td><strong>{{ currentProd[prod.id].price * prod.count}}</strong> руб.</td>
@@ -33,8 +33,8 @@ export default {
     }
   },
   methods: {
-    changeCount: function(action, id){
-      let obj = {id: id, action: action}
+    changeCount: function(action, id, size){
+      let obj = {id: id, action: action, size: size}
       this.$store.dispatch('changeCountCart', obj)
     },
     deleteProcut: function(id){
