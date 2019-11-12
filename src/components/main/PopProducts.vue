@@ -11,7 +11,7 @@
           
           <!-- :style="{ 'margin-left': key == 0 ? (leftOffset != 0 ? leftOffset + 'px' : '1%') : ' ' }" -->
           <article class="pop-products-item" v-for="(product, key) in products" >
-            <router-link :to="'product/'+product.id" class="pop-products-item__link">
+            <router-link :to="{ name: 'product', params: {id: product.id} }" class="pop-products-item__link">
               <div class="pop-products-item__img">
                   <img :src="'/img/'+product.imgs[0]" alt="Пальто">
                 </div>

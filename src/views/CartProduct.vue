@@ -14,7 +14,7 @@ import CartProd from '@/components/CartProd.vue'
     components:{
       Header,
       CartProd
-    } 
+    }
   }
 
 </script>

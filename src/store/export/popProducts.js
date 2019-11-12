@@ -24,8 +24,8 @@ export default {
         title: "PRODUCT NAME 3",
         sub_title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, saepe.",
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, optio commodi recusandae obcaecati nulla fugiat quis, maiores quia fugit animi molestias, unde consequatur deserunt quisquam minima eligendi expedita reiciendis sed tenetur doloremque assumenda. Quas nihil omnis tenetur recusandae, minus culpa?",
-        size: ['s', 'm'],
-        imgs: ['Product1.png', 'Product2.png', 'Product3.png'],
+        size: ['s', 'm', 'xl'],
+        imgs: ['Product1.png', 'Product2.png', 'Product3.png', 'Product3.png'],
         price: 1000
       },
       {

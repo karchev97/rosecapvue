@@ -176,6 +176,27 @@
         }
     }
 }
+.modal{
+  @include defaultFont(600, normal, green);
+
+  font-size: 12px;
+  position: fixed;
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 1px solid #edeff1;
+  background: #fff;
+  box-shadow: 0px 0 35px 12px rgba(0, 0, 0, 0.1);
+  top: -200px;
+  transition: all 0.7s;
+
+  &--show{
+    top: 30px;
+  }
+
+  &--red{
+    color: red;
+  }
+}
 
 @media (min-width: 800px) and (max-width: 1200px){
     .product-cart{
