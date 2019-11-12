@@ -52,7 +52,8 @@ export default {
       count: 1,
       showModal: false,
       modalError: null,
-      textModal: ''
+      textModal: '', 
+      timer: ''
     }
   },
   methods: {
@@ -70,18 +71,37 @@ export default {
       this.count++
     },
     addToCart: function(){
+      clearTimeout(this.timer)
+
       if(this.activeSize == null){
         this.modalError = false
         this.textModal = 'Выберите пожалуйста размер'
-      } else{
+      } 
+      
+      else{
         this.modalError = true
-        this.textModal = 'Товар был успешно добавлен в корзину'
+        let obj = {id: this.id, size: this.product.size[this.activeSize], count: this.count}
+        
+        for(var i = 0; i < this.$store.getters.CART_COUNT.length; i++){
+          if((this.$store.getters.CART_COUNT[i].id == obj.id) && (this.$store.getters.CART_COUNT[i].size == obj.size)){
+            this.modalError = false
+            this.textModal = 'Вы уже добавили данный товар :('
+            continue
+          }
+        }
+
+        if(this.modalError){
+          this.$store.dispatch('addToCart', obj)
+          this.textModal = 'Товар был успешно добавлен в корзину'
+        }
       }
+
       this.showModal = true
-      setTimeout(function(){
+      this.timer = setTimeout(function(){
         this.showModal = false
       }.bind(this), 4000)
     },
+
     productInit: function(){
       this.id = this.$route.params.id
       for(var i = 0; i < this.$store.getters.PRODUCTS.length; i++){
@@ -97,9 +117,9 @@ export default {
   },
   watch: {
     $route:function () {
-      this.productInit();
+      this.activeSize = null
+      this.productInit()
     }
-  
-  }
+  },
 }
 </script>

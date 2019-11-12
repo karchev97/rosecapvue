@@ -30,7 +30,9 @@
 
         <ul class="shop-nav">
           <li class="shop-nav__item"><a href="#"><span class="ti-search"></span></a></li>
-          <li class="shop-nav__item"><a href="#"><span class="ti-shopping-cart"></span></a></li>
+          <li class="shop-nav__item"><a href="#"><span class="ti-shopping-cart"></span>
+            <div class="shop-nav__count">{{ countCart.length }}</div>
+          </a></li>
         </ul>
       </nav>
     </div>
@@ -41,7 +43,8 @@
 export default {
   data(){
     return{
-      isOpen: false
+      isOpen: false,
+      countCart: this.$store.getters.CART_COUNT,
     }
   },
   methods: {
@@ -52,6 +55,12 @@ export default {
   created(){
     window.onresize = () => this.showMenu();
     this.showMenu();
+  },
+  watch: {
+    countCart: function(){
+      this.countCart = this.$store.getters.CART_COUNT
+    }
   }
+
 }
 </script>

@@ -107,7 +107,8 @@
 	.shop-nav{
 		display: flex;
 		flex-direction: row;
-		align-items: center;
+    align-items: center;
+    position: relative;
 
 		@include liDisplay();
 
@@ -117,7 +118,20 @@
 			& a{
 				@include defaultLink($mainDarkColor, 16px, $mainColor, $mainColor);
 			}
-		}
+    }
+    
+    &__count{
+      font-size: 10px;
+      font-weight: 600;
+      color: #fff;
+      position: absolute;
+      background: $mainDarkColor;
+      padding: 2px 5px;
+      border-radius: 8px;
+      z-index: 99;
+      top: -6px;
+      right: -12px;
+    }
 	}
 }
 
